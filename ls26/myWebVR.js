@@ -63,25 +63,27 @@ function fullScreen() {
     //}
 }
 function getVRSensorState() {
+    drawcanvas().then(function (a) {
 
-    vrHMD.requestAnimationFrame(getVRSensorState);
-    vrHMD.getFrameData(frameData);
-    var curFramePose = frameData.pose;
-    var orientation = curFramePose.orientation;
-    if (orientation != null) {
-        gameInstance.SendMessage('CameraSet', 'rotation_X', -orientation[0]);
-        gameInstance.SendMessage('CameraSet', 'rotation_Y', -orientation[1]);
-        gameInstance.SendMessage('CameraSet', 'rotation_Z', orientation[2]);
-        gameInstance.SendMessage('CameraSet', 'rotation_W', orientation[3]);
-    }
-    //if (curFramePose.position != null)
-    //{
-    //    SendMessage('CameraSet', 'position_x', curFramePose.position.x);
-    //    SendMessage('CameraSet', 'position_y', curFramePose.position.y);
-    //    SendMessage('CameraSet', 'position_z', curFramePose.position.z);
-    //}
-    vrHMD.submitFrame();
+        vrHMD.requestAnimationFrame(getVRSensorState);
+        vrHMD.getFrameData(frameData);
+        var curFramePose = frameData.pose;
+        var orientation = curFramePose.orientation;
+        if (orientation != null) {
+            gameInstance.SendMessage('CameraSet', 'rotation_X', -orientation[0]);
+            gameInstance.SendMessage('CameraSet', 'rotation_Y', -orientation[1]);
+            gameInstance.SendMessage('CameraSet', 'rotation_Z', orientation[2]);
+            gameInstance.SendMessage('CameraSet', 'rotation_W', orientation[3]);
+        }
+        //if (curFramePose.position != null)
+        //{
+        //    SendMessage('CameraSet', 'position_x', curFramePose.position.x);
+        //    SendMessage('CameraSet', 'position_y', curFramePose.position.y);
+        //    SendMessage('CameraSet', 'position_z', curFramePose.position.z);
+        //}
+        vrHMD.submitFrame();
 
+    });
 }
 
 
