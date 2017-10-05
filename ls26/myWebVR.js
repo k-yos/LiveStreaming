@@ -64,6 +64,7 @@ function fullScreen() {
 }
 function getVRSensorState() {
 
+    vrHMD.submitFrame();
     vrHMD.requestAnimationFrame(getVRSensorState);
     vrHMD.getFrameData(frameData);
     var curFramePose = frameData.pose;
@@ -80,7 +81,6 @@ function getVRSensorState() {
     //    SendMessage('CameraSet', 'position_y', curFramePose.position.y);
     //    SendMessage('CameraSet', 'position_z', curFramePose.position.z);
     //}
-    vrHMD.submitFrame();
 
 }
 
