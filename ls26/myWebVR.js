@@ -12,6 +12,8 @@ function getVRDevices() {
                     console.log("get HMD device");
                     vrHMD = devices[i];
                     console.log(vrHMD.displayName);
+                    var button = document.getElementById('button');
+                    button.disabled = false;
                     break;
                 }
             }
@@ -67,10 +69,12 @@ function getVRSensorState() {
         vrHMD.getFrameData(frameData);
         var curFramePose = frameData.pose;
         var orientation = curFramePose.orientation;
-        gameInstance.SendMessage('CameraSet', 'rotation_X', -orientation[0]);
-        gameInstance.SendMessage('CameraSet', 'rotation_Y', -orientation[1]);
-        gameInstance.SendMessage('CameraSet', 'rotation_Z', orientation[2]);
-        gameInstance.SendMessage('CameraSet', 'rotation_W', orientation[3]);
+        if (orientation != null) {
+            gameInstance.SendMessage('CameraSet', 'rotation_X', -orientation[0]);
+            gameInstance.SendMessage('CameraSet', 'rotation_Y', -orientation[1]);
+            gameInstance.SendMessage('CameraSet', 'rotation_Z', orientation[2]);
+            gameInstance.SendMessage('CameraSet', 'rotation_W', orientation[3]);
+        }
         //if (state.position != null)
         //{
         //    SendMessage('CameraSet', 'position_x', state.position.x);
