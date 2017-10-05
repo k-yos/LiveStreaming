@@ -43,8 +43,8 @@ function fullScreen() {
         var leftEye = vrHMD.getEyeParameters('left');
         var rightEye = vrHMD.getEyeParameters('right');
 
-        //myCanvas.width = Math.max(leftEye.renderWidth, rightEye.renderWidth) * 2;
-        //myCanvas.height = Math.max(leftEye.renderHeight, rightEye.renderHeight);
+        myCanvas.width = Math.max(leftEye.renderWidth, rightEye.renderWidth) * 2;
+        myCanvas.height = Math.max(leftEye.renderHeight, rightEye.renderHeight);
 
         getVRSensorState();
     });
