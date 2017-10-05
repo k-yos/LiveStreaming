@@ -65,11 +65,11 @@ function fullScreen() {
 function getVRSensorState() {
     console.timeEnd("HMD");
     console.time("HMD");
-    vrHMD.submitFrame();
     vrHMD.requestAnimationFrame(getVRSensorState);
     vrHMD.getFrameData(frameData);
-    var curFramePose = frameData.pose;
-    var orientation = curFramePose.orientation;
+    //var curFramePose = frameData.pose;
+    //var orientation = curFramePose.orientation;
+    var orientation = frameData.pose.orientation;
     if (orientation != null) {
         gameInstance.SendMessage('CameraSet', 'rotation_X', -orientation[0]);
         gameInstance.SendMessage('CameraSet', 'rotation_Y', -orientation[1]);
@@ -82,6 +82,7 @@ function getVRSensorState() {
     //    SendMessage('CameraSet', 'position_y', curFramePose.position.y);
     //    SendMessage('CameraSet', 'position_z', curFramePose.position.z);
     //}
+    vrHMD.submitFrame();
 
 }
 
