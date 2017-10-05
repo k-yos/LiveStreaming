@@ -65,7 +65,7 @@ function fullScreen() {
 }
 function getVRSensorState() {
 
-    vrHMD.requestAnimationFrame(getVRSensorState);
+    //vrHMD.requestAnimationFrame(getVRSensorState);
     if (setpose == false) {
         vrHMD.getFrameData(frameData);
         var curFramePose = frameData.pose;
@@ -88,6 +88,7 @@ function getVRSensorState() {
 function FinishSetPose() {
     vrHMD.submitFrame();
     setpose = false;
+    getVRSensorState();
 }
 
 window.onvrdisplayconnect = function () {
