@@ -37,7 +37,8 @@ function Enter(roomnumber, role)
 					return;
 				}
 			}
-			gameInstance.SendMessage('ProjectManager', 'SceneChange', 1);
+            gameInstance.SendMessage('ProjectManager', 'SceneChange', 1);
+            getVRDevices();
 		})
     }).on('peer_ms', function (video)
     {
