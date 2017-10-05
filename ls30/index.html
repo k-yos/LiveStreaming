@@ -38,8 +38,8 @@
             console.log(videoval.videoHeight);
             if (videoval.videoWidth != 0 && videoval.videoHeight != 0) {
                 console.log("init texture");
-                canvas.width = videoval.videoWidth / 4;
-                canvas.height = videoval.videoHeight / 4;
+                canvas.width = videoval.videoWidth / 2;
+                canvas.height = videoval.videoHeight / 2;
                 console.log(canvas.width);
                 console.log(canvas.height);
                 base64String = canvas.toDataURL().split('base64,')[1];
