@@ -48,7 +48,7 @@
                 gameInstance.SendMessage('Spherer', 'GetHeight', canvas.height);
                 gameInstance.SendMessage('Spherer', 'SetTex', base64String);
                 drawcanvas();
-                aaaa();
+                //aaaa();
             } else {
                 console.log("not init");
                 requestAnimationFrame(inittexture);
@@ -61,18 +61,18 @@
                 base64String = canvas.toDataURL("image/jpeg").split('base64,')[1];
                 gameInstance.SendMessage('Spherer', 'SetTextureFunction', base64String);
             } catch (e) { }
-            requestAnimationFrame(aaaa);
+            //requestAnimationFrame(aaaa);
         }
 
         function drawcanvas() {
-            //console.timeEnd("V to C");
-            //console.time("V to C");
+            console.timeEnd("V to C");
+            console.time("V to C");
             if (videoval != null) {
                 ctx.drawImage(videoval, 0, 0, videoval.videoWidth, videoval.videoHeight, 0, 0, canvas.width, canvas.height);
             } else {
 
             }
-            ///aaaa();
+            aaaa();
             requestAnimationFrame(drawcanvas);
         }
 
