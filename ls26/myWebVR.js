@@ -3,6 +3,7 @@ var vrHMD, vrSensor;
 
 var frameData;
 var connected = true;
+var setpose = false;
 
 function getVRDevices() {
     if (navigator.getVRDisplays) {
@@ -64,8 +65,8 @@ function fullScreen() {
 }
 function getVRSensorState() {
 
-    if (connected) {
-        vrHMD.requestAnimationFrame(getVRSensorState);
+    vrHMD.requestAnimationFrame(getVRSensorState);
+    if (setpose == false) {
         vrHMD.getFrameData(frameData);
         var curFramePose = frameData.pose;
         var orientation = curFramePose.orientation;
@@ -75,15 +76,20 @@ function getVRSensorState() {
             gameInstance.SendMessage('CameraSet', 'rotation_Z', orientation[2]);
             gameInstance.SendMessage('CameraSet', 'rotation_W', orientation[3]);
         }
-        //if (state.position != null)
+        //if (curFramePose.position != null)
         //{
-        //    SendMessage('CameraSet', 'position_x', state.position.x);
-        //    SendMessage('CameraSet', 'position_y', state.position.y);
-        //    SendMessage('CameraSet', 'position_z', state.position.z);
+        //    SendMessage('CameraSet', 'position_x', curFramePose.position.x);
+        //    SendMessage('CameraSet', 'position_y', curFramePose.position.y);
+        //    SendMessage('CameraSet', 'position_z', curFramePose.position.z);
         //}
+        setpose = true;
     }
-    vrHMD.submitFrame();
 }
+function FinishSetPose() {
+    vrHMD.submitFrame();
+    setpose = false;
+}
+
 window.onvrdisplayconnect = function () {
     console.log("display connected!!");
     connected = true;
