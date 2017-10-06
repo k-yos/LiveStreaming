@@ -106,7 +106,7 @@ function Render()
 {
     
     console.log("fin setpose");
-    if (i > 1)
+    if (i > 0)
     {
         vrHMD.submitFrame();
         i = 0;
