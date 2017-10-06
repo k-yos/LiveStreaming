@@ -75,6 +75,7 @@ function fullScreen() {
     //    myCanvas.webkitRequestFullscreen({ vrDisplay: vrHMD });
     //}
 }
+var i = 0;
 function getVRSensorState()
 {
     
