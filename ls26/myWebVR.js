@@ -20,14 +20,23 @@ function getVRDevices() {
         });
     }
 }
+var mode = 0;
 function webvr_click() {
     console.log("change mode");
     if (!vrHMD) {
         alert("Can't find HMD display");
         return;
     }
-    fullScreen();
-    gameInstance.SendMessage('CameraSet', 'ChangeMode', 'vr');
+    if (mode == 0)
+    {
+        fullScreen();
+        gameInstance.SendMessage('CameraSet', 'ChangeMode', 'vr');
+        mode = 1;
+    } else
+    {
+        vrHMD.exitPresent();
+        mode = 0;
+    }
     //getVRSensorState();
 }
 function fullScreen() {
