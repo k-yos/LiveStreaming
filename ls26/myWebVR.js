@@ -33,20 +33,14 @@ function webvr_click() {
         fullScreen();
         gameInstance.SendMessage('CameraSet', 'ChangeMode', 'vr');
         mode = 1;
-        var button = document.getElementById('b');
-        button.disabled = false;
         var button = document.getElementById('button');
-        button.disabled = true;
+        button.value = "Stop VR";
     } else
     {
         console.log("Display Normal");
         vrHMD.exitPresent();
         gameInstance.SendMessage('CameraSet', 'ChangeMode', 'normal');
         mode = 0;
-        var button = document.getElementById('button');
-        button.disabled = false;
-        var button = document.getElementById('b');
-        button.disabled = true;
     }
     //getVRSensorState();
 }
