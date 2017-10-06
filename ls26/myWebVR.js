@@ -29,12 +29,15 @@ function webvr_click() {
     }
     if (mode == 0)
     {
+        console.log("Start VR");
         fullScreen();
         gameInstance.SendMessage('CameraSet', 'ChangeMode', 'vr');
         mode = 1;
     } else
     {
+        console.log("Display Normal");
         vrHMD.exitPresent();
+        gameInstance.SendMessage('CameraSet', 'ChangeMode', 'normal');
         mode = 0;
     }
     //getVRSensorState();
