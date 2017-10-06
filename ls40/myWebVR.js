@@ -77,8 +77,8 @@ function fullScreen() {
     //}
 }
 function getVRSensorState() {
-    //console.timeEnd("HMD");
-    //console.time("HMD");
+    console.timeEnd("HMD");
+    console.time("HMD");
     vrHMD.requestAnimationFrame(getVRSensorState);
     vrHMD.getFrameData(frameData);
     //var curFramePose = frameData.pose;
