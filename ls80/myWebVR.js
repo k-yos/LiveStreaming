@@ -1,5 +1,5 @@
 var vrHMD, vrSensor;
-
+var vrPoseData;
 var frameData;
 var connected = true;
 
@@ -97,7 +97,7 @@ function getVRSensorState()
     //    SendMessage('CameraSet', 'position_z', curFramePose.position.z);
     //}
     //vrHMD.submitFrame();
-
+    vrHMD.submitFrame(vrPoseData);
 }
 
 function Render()
@@ -105,6 +105,8 @@ function Render()
     console.timeEnd("HMD");
     console.time("HMD");
     vrHMD.submitFrame();
+    vrHMD.getFrameData(frameData);
+    vrPoseData = frameData.pose;
 }
 
 window.onvrdisplayconnect = function () {
