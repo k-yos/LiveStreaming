@@ -97,7 +97,11 @@ function getVRSensorState()
     //    SendMessage('CameraSet', 'position_z', curFramePose.position.z);
     //}
     //vrHMD.submitFrame();
-    if (render == false) vrHMD.submitFrame(vrPoseData);
+    if (render == false)
+    {
+        vrHMD.submitFrame(vrPoseData);
+        console.log("rrrrr")
+    }
     else render = false;
 }
 
