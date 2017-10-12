@@ -96,20 +96,14 @@
             //console.time("V to C");
             if (videoval != null)
             {
-                //ctx.drawImage(videoval, 0, 0, videoval.videoWidth, videoval.videoHeight, 0, 0, canvas.width, canvas.height);
                 aaaa();
-                draw();
+                ctx.drawImage(videoval, 0, 0, videoval.videoWidth, videoval.videoHeight, 0, 0, canvas.width, canvas.height);
             } else
             {
 
             }
             //aaaa();
             requestAnimationFrame(drawcanvas);
-        }
-        function draw()
-        {
-            ctx.drawImage(videoval, 0, 0, videoval.videoWidth, videoval.videoHeight, 0, 0, canvas.width, canvas.height);
-
         }
     </script>
 
