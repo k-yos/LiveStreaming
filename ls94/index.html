@@ -65,7 +65,6 @@
         var s = false;
         function finSet()
         {
-            console.log("fin set");
             s = false;
         }
         function aaaa()
@@ -75,13 +74,12 @@
             {
                 if (s == false)
                 {
-                    console.log("set blob");
                     canvas.toBlob(function (blob)
                     {
                         url = URL.createObjectURL(blob);
                         gameInstance.SendMessage(name, 'set', url);
 
-                    }, "image/jpeg", 0.95);
+                    }, "image/jpeg", 1.0);
 
                     //blob = window.URL.createObjectURL(videoval.src);
                     //base64String = canvas.toDataURL("image/jpeg").split('base64,')[1];
