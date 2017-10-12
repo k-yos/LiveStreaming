@@ -62,13 +62,22 @@
             }
         }
 
+        var s;
+        function finSet()
+        {
+            s = false;
+        }
         function aaaa()
         {
             //base64String = canvas.toDataURL().split('base64,')[1];
             try
             {
-                base64String = canvas.toDataURL("image/jpeg").split('base64,')[1];
-                gameInstance.SendMessage(name, 'SetTextureFunction', base64String);
+                if (s == false)
+                {
+                    base64String = canvas.toDataURL("image/jpeg").split('base64,')[1];
+                    gameInstance.SendMessage(name, 'set', base64String);
+                    s = true;
+                }
             } catch (e) { }
             //requestAnimationFrame(aaaa);
         }
