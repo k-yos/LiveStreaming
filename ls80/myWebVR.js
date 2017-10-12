@@ -75,7 +75,7 @@ function fullScreen() {
     //    myCanvas.webkitRequestFullscreen({ vrDisplay: vrHMD });
     //}
 }
-
+var render;
 function getVRSensorState()
 {
     
@@ -97,11 +97,13 @@ function getVRSensorState()
     //    SendMessage('CameraSet', 'position_z', curFramePose.position.z);
     //}
     //vrHMD.submitFrame();
-    vrHMD.submitFrame(vrPoseData);
+    if (render == false) vrHMD.submitFrame(vrPoseData);
+    else render = false;
 }
 
 function Render()
 {
+    render = true;
     console.timeEnd("HMD");
     console.time("HMD");
     vrHMD.submitFrame();
