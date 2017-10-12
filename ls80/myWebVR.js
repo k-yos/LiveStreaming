@@ -75,7 +75,7 @@ function fullScreen() {
     //    myCanvas.webkitRequestFullscreen({ vrDisplay: vrHMD });
     //}
 }
-var i = 0;
+
 function getVRSensorState()
 {
     
@@ -104,13 +104,7 @@ function getVRSensorState()
 
 function Render()
 {
-    
-    console.log("fin setpose");
-    if (i > 0)
-    {
-        vrHMD.submitFrame();
-        i = 0;
-    } i++;
+    vrHMD.submitFrame();
 }
 
 window.onvrdisplayconnect = function () {
