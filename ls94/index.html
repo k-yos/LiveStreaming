@@ -76,10 +76,6 @@
                 {
                     canvas.toBlob(function (blob)
                     {
-                        console.log("--------------------------------");
-                        console.log(blob);
-                        console.log(canvas.src);
-                        console.log("--------------------------------");
                         url = URL.createObjectURL(blob);
                         gameInstance.SendMessage(name, 'set', url);
 
@@ -100,13 +96,22 @@
             //console.time("V to C");
             if (videoval != null)
             {
-                ctx.drawImage(videoval, 0, 0, videoval.videoWidth, videoval.videoHeight, 0, 0, canvas.width, canvas.height);
+                //ctx.drawImage(videoval, 0, 0, videoval.videoWidth, videoval.videoHeight, 0, 0, canvas.width, canvas.height);
+                draw().then(function (a)
+                {
+                    aaaa();
+                });
             } else
             {
 
             }
-            aaaa();
+            //aaaa();
             requestAnimationFrame(drawcanvas);
+        }
+        function draw()
+        {
+            ctx.drawImage(videoval, 0, 0, videoval.videoWidth, videoval.videoHeight, 0, 0, canvas.width, canvas.height);
+            return 0;
         }
     </script>
 
