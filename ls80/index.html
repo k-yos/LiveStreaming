@@ -39,11 +39,13 @@
 
         function inittexture()
         {
-            console.log(videoval.videoWidth);
-            console.log(videoval.videoHeight);
             if (videoval.videoWidth != 0 && videoval.videoHeight != 0)
             {
                 console.log("init texture");
+                videoval.videoWidth = videoval.videoWidth / 2;
+                videoval.videoHeight = videoval.videoHeight / 2;
+                console.log(videoval.videoWidth);
+                console.log(videoval.videoHeight);
                 canvas.width = videoval.videoWidth / 2;
                 canvas.height = videoval.videoHeight / 2;
                 console.log(canvas.width);
