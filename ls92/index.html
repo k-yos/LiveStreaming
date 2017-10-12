@@ -74,8 +74,9 @@
             {
                 if (s == false)
                 {
+                    console.log(videoval.src);
                     base64String = canvas.toDataURL("image/jpeg").split('base64,')[1];
-                    gameInstance.SendMessage(name, 'set', base64String);
+                    //gameInstance.SendMessage(name, 'set', base64String);
                     s = true;
                 }
             } catch (e) { }
