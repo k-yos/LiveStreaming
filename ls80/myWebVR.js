@@ -79,7 +79,8 @@ function fullScreen() {
 function getVRSensorState()
 {
     
-    vrHMD.requestAnimationFrame(getVRSensorState);
+    //vrHMD.requestAnimationFrame(getVRSensorState);
+    requestAnimationFrame(getVRSensorState);
     vrHMD.getFrameData(frameData);
     //var curFramePose = frameData.pose;
     //var orientation = curFramePose.orientation;
