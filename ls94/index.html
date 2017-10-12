@@ -76,6 +76,10 @@
                 {
                     canvas.toBlob(function (blob)
                     {
+                        console.log("--------------------------------");
+                        console.log(blob);
+                        console.log(canvas.src);
+                        console.log("--------------------------------");
                         url = URL.createObjectURL(blob);
                         gameInstance.SendMessage(name, 'set', url);
 

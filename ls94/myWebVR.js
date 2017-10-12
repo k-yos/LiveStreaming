@@ -78,8 +78,8 @@ function fullScreen() {
 var render;
 function getVRSensorState()
 {
-    console.timeEnd("update");
-    console.time("update");
+    //console.timeEnd("update");
+    //console.time("update");
     vrHMD.requestAnimationFrame(getVRSensorState);
     vrHMD.getFrameData(frameData);
     //var curFramePose = frameData.pose;
@@ -101,7 +101,6 @@ function getVRSensorState()
     if (render == false)
     {
         vrHMD.submitFrame(vrPoseData);
-        console.log("rrrrr")
     }
     else render = false;
 }
@@ -109,8 +108,8 @@ function getVRSensorState()
 function Render()
 {
     render = true;
-    console.timeEnd("HMD");
-    console.time("HMD");
+    //console.timeEnd("HMD");
+    //console.time("HMD");
     vrHMD.submitFrame();
     vrHMD.getFrameData(frameData);
     vrPoseData = frameData.pose;
