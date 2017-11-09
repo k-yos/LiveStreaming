@@ -1,9 +1,0 @@
-{
-"TOTAL_MEMORY": 268435456,
-"dataUrl": "live.data.unityweb",
-"asmCodeUrl": "live.asm.code.unityweb",
-"asmMemoryUrl": "live.asm.memory.unityweb",
-"asmFrameworkUrl": "live.asm.framework.unityweb",
-"splashScreenStyle": "Dark",
-"backgroundColor": "#231F20"
-}
