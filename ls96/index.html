@@ -78,9 +78,9 @@
                     {
                         url = URL.createObjectURL(blob);
                         gameInstance.SendMessage(name, 'set', url);
+                        console.log(blob);
 
                     }, "image/jpeg", 1.0);
-
                     //blob = window.URL.createObjectURL(videoval.src);
                     //base64String = canvas.toDataURL("image/jpeg").split('base64,')[1];
                     //gameInstance.SendMessage(name, 'set', blob);
