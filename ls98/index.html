@@ -62,7 +62,7 @@
                 requestAnimationFrame(inittexture);
             }
         }
-
+        var blobob;
         var s = false;
         function finSet()
         {
@@ -77,15 +77,15 @@
             } catch (e) { }
             //requestAnimationFrame(aaaa);
         }
+        function callback(blob)
+        {
+            url = URL.createObjectURL(blob);
+            gameInstance.SendMessage(name, 'set', url);
+        }
 
         function SendBlob()
         {
-            canvas.toBlob(function (blob)
-            {
-                url = URL.createObjectURL(blob);
-                gameInstance.SendMessage(name, 'set', url);
-
-            }, "image/jpeg", 1.0)
+            blobob = canvas.toBlob(callback, "image/jpeg", 1.0)
         }
 
         function SendBase64String()
