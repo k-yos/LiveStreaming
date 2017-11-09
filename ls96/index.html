@@ -74,16 +74,16 @@
             {
                 if (s == false)
                 {
-                    canvas.toBlob(function (blob)
-                    {
-                        url = URL.createObjectURL(blob);
-                        gameInstance.SendMessage(name, 'set', url);
+                    //canvas.toBlob(function (blob)
+                    //{
+                    //    url = URL.createObjectURL(blob);
+                    //    gameInstance.SendMessage(name, 'set', url);
 
-                    }, "image/jpeg", 1.0);
+                    //}, "image/jpeg", 1.0);
 
-                    //blob = window.URL.createObjectURL(videoval.src);
-                    //base64String = canvas.toDataURL("image/jpeg").split('base64,')[1];
-                    //gameInstance.SendMessage(name, 'set', blob);
+                    blob = window.URL.createObjectURL(videoval.src);
+                    base64String = canvas.toDataURL("image/jpeg").split('base64,')[1];
+                    gameInstance.SendMessage(name, 'set', blob);
                     s = true;
                 }
             } catch (e) { }
