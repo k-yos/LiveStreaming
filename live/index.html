@@ -72,13 +72,18 @@
         {
             try
             {
-                SendBlob();
+                if (s == false)
+                {
+                    SendBlob();
+                    s = true;
+                }
                 //SendBase64String();
             } catch (e) { }
             //requestAnimationFrame(aaaa);
         }
         function callback(blob)
         {
+            URL.revokeObjectURL(url);
             url = URL.createObjectURL(blob);
             gameInstance.SendMessage(name, 'set', url);
         }
