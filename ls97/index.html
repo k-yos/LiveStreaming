@@ -22,6 +22,7 @@
         var videoval;
         var base64String;
         var name;
+        var url;
         window.onload = function ()
         {
             canvas = document.getElementById("the-canvas");
@@ -69,24 +70,32 @@
         }
         function aaaa()
         {
-            //base64String = canvas.toDataURL().split('base64,')[1];
             try
             {
                 if (s == false)
                 {
-                    canvas.toBlob(function (blob)
-                    {
-                        url = URL.createObjectURL(blob);
-                        gameInstance.SendMessage(name, 'set', url);
-
-                    }, "image/jpeg", 1.0);
-                    //blob = window.URL.createObjectURL(videoval.src);
-                    //base64String = canvas.toDataURL("image/jpeg").split('base64,')[1];
-                    //gameInstance.SendMessage(name, 'set', blob);
+                    SendBlob();
+                    //SendBase64String();
                     s = true;
                 }
             } catch (e) { }
             //requestAnimationFrame(aaaa);
+        }
+
+        function SendBlob()
+        {
+            canvas.toBlob(function (blob)
+            {
+                url = URL.createObjectURL(blob);
+                gameInstance.SendMessage(name, 'set', url);
+
+            }, "image/jpeg", 1.0)
+        }
+
+        function SendBase64String()
+        {
+            base64String = canvas.toDataURL("image/jpeg").split('base64,')[1];
+            gameInstance.SendMessage(name, 'SetTextureFunction', base64String);
         }
 
         function drawcanvas()
