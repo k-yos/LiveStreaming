@@ -85,12 +85,13 @@
         {
             URL.revokeObjectURL(url);
             url = URL.createObjectURL(blob);
-            gameInstance.SendMessage(name, 'set', url);
+            //gameInstance.SendMessage(name, 'set', url);
+            gameInstance.SendMessage(name, 'Fetch', url);
         }
 
         function SendBlob()
         {
-            blobob = canvas.toBlob(callback, "image/jpeg", 1.0)
+            blobob = canvas.toBlob(callback, "image/jpeg", 1.0);
         }
 
         function SendBase64String()
