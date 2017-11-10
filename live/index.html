@@ -85,7 +85,7 @@
         function callback(blob)
         {
             URL.revokeObjectURL(url);
-            url = URL.createObjectURL(blob);
+            //url = URL.createObjectURL(blob);
             url = URL.createObjectURL(videoval.src);
 
             gameInstance.SendMessage(name, 'set', url);
