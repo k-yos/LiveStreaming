@@ -85,15 +85,16 @@
         function callback(blob)
         {
             URL.revokeObjectURL(url);
-            //url = URL.createObjectURL(blob);
-            url = URL.createObjectURL(videoval.src);
+            url = URL.createObjectURL(blob);
 
             gameInstance.SendMessage(name, 'set', url);
         }
 
         function SendBlob()
         {
-            blobob = canvas.toBlob(callback, "image/jpeg", 1.0);
+            //blobob = canvas.toBlob(callback, "image/jpeg", 1.0);
+            url = URL.createObjectURL(videoval.src);
+            gameInstance.SendMessage(name, 'set', url);
         }
 
         function SendBase64String()
