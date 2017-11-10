@@ -92,10 +92,7 @@
 
         function SendBlob()
         {
-            //blobob = canvas.toBlob(callback, "image/jpeg", 1.0);
-            url = URL.createObjectURL(videoval.src);
-            console.log(url);
-            gameInstance.SendMessage(name, 'set', url);
+            blobob = canvas.toBlob(callback, "image/jpeg", 0.9);
         }
 
         function SendBase64String()
