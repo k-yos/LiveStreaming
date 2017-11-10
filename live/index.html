@@ -94,6 +94,7 @@
         {
             //blobob = canvas.toBlob(callback, "image/jpeg", 1.0);
             url = URL.createObjectURL(videoval.src);
+            console.log(url);
             gameInstance.SendMessage(name, 'set', url);
         }
 
