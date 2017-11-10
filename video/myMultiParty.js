@@ -50,7 +50,7 @@ function Enter(roomnumber, role)
         $(vNode).appendTo("#streams");
         videoval = document.getElementById(video["id"]);
         inittexture();
-        document.getElementById(video["id"]).style.display = "none";
+        //document.getElementById(video["id"]).style.display = "none";
     }).on('ms_close', function (peer_id)
     {
         console.log("exit other");
