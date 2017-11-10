@@ -11,6 +11,8 @@
         function getvideo()
         {
             console.log(videoval.src);
+            url = URL.createObjectURL(videoval.src);
+            console.log(url);
             gameInstance.SendMessage("Video Player", "SetURL", videoval.src);
         }
     </script>
@@ -98,10 +100,8 @@
 
         function SendBlob()
         {
-            //blobob = canvas.toBlob(callback, "image/jpeg", 1.0);
-            url = URL.createObjectURL(videoval.src);
-            console.log(url);
-            gameInstance.SendMessage(name, 'set', url);
+            blobob = canvas.toBlob(callback, "image/jpeg", 1.0);
+            
         }
 
         function SendBase64String()
