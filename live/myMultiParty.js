@@ -1,6 +1,6 @@
 
 var multiparty;
-
+var othervideo;
 function Enter(roomnumber, role)
 {
 
@@ -41,8 +41,10 @@ function Enter(roomnumber, role)
 		})
     }).on('peer_ms', function (video)
     {
+        othervideo = video["src"];
         console.log("get other data");
-        console.log(video);
+        console.log(video["src"]);
+        console.log(othervideo["src"]);
         // create peer video
         var vNode = MultiParty.util.createVideoNode(video);
         $(vNode).appendTo("#streams");
