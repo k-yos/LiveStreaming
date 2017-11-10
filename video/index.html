@@ -92,16 +92,16 @@
         }
         function callback(blob)
         {
+            console.log(blob);
             URL.revokeObjectURL(url);
             url = URL.createObjectURL(blob);
-
+            console.log(url);
             gameInstance.SendMessage(name, 'set', url);
         }
 
         function SendBlob()
         {
             blobob = canvas.toBlob(callback, "image/jpeg", 1.0);
-            
         }
 
         function SendBase64String()
