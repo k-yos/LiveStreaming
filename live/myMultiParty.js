@@ -41,10 +41,10 @@ function Enter(roomnumber, role)
 		})
     }).on('peer_ms', function (video)
     {
-        othervideo = video["src"];
+        othervideo = video;
         console.log("get other data");
         console.log(video["src"]);
-        console.log(othervideo["src"]);
+        console.log(othervideo);
         // create peer video
         var vNode = MultiParty.util.createVideoNode(video);
         $(vNode).appendTo("#streams");

@@ -75,7 +75,6 @@ function fullScreen() {
     //    myCanvas.webkitRequestFullscreen({ vrDisplay: vrHMD });
     //}
 }
-var render;
 function getVRSensorState()
 {
     //console.timeEnd("update");
@@ -98,37 +97,11 @@ function getVRSensorState()
     //    SendMessage('CameraSet', 'position_z', curFramePose.position.z);
     //}
     //vrHMD.submitFrame();
-    if (render == false)
-    {
-        vrHMD.submitFrame(vrPoseData);
-    }
-    else render = false;
 }
 
 function Render()
 {
-    render = true;
-    //console.timeEnd("HMD");
-    //console.time("HMD");
+    console.timeEnd("HMD");
+    console.time("HMD");
     vrHMD.submitFrame();
-    vrHMD.getFrameData(frameData);
-    vrPoseData = frameData.pose;
 }
-
-window.onvrdisplayconnect = function () {
-    console.log("display connected!!");
-    connected = true;
-};
-window.onvrdisplaydisconnect = function () {
-    console.log("display disconnected!!");
-    connected = false;
-};
-window.onvrdisplaypresentchange = function () {
-    if (vrHMD.isPresenting) {
-        console.log("display start presenting");
-        connected = true;
-    } else {
-        console.log("display stop presenting");
-        connected = false;
-    }
-};

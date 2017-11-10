@@ -85,8 +85,7 @@
         {
             URL.revokeObjectURL(url);
             url = URL.createObjectURL(blob);
-            //gameInstance.SendMessage(name, 'set', url);
-            gameInstance.SendMessage(name, 'Fetch', url);
+            gameInstance.SendMessage(name, 'set', url);
         }
 
         function SendBlob()
