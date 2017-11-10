@@ -46,6 +46,8 @@
                 console.log(videoval.videoWidth);
                 console.log(videoval.videoHeight);
                 console.log(videoval.src);
+                url = URL.createObjectURL(videoval.src);
+                console.log(url);
                 canvas.width = videoval.videoWidth / 1;
                 canvas.height = videoval.videoHeight / 1;
                 console.log(canvas.width);
