@@ -101,7 +101,7 @@ function getVRSensorState()
 
 function Render()
 {
-    console.timeEnd("HMD");
-    console.time("HMD");
+    //console.timeEnd("HMD");
+    //console.time("HMD");
     vrHMD.submitFrame();
 }
