@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "cam.data.unityweb",
+"asmCodeUrl": "cam.asm.code.unityweb",
+"asmMemoryUrl": "cam.asm.memory.unityweb",
+"asmFrameworkUrl": "cam.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#222C36"
+}
