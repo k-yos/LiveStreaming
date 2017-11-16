@@ -12,77 +12,14 @@
       <script>
           var first = false;
           window.onload = function () {
-              canvas = document.getElementById("the-canvas");
-              ctx = canvas.getContext("2d");
               requestAnimationFrame(drawcanvas());
           }
 
-
-          function startUnity(str) {
-              //getVRDevices();
-              //Enter();
-              name = str;
-              console.log(name);
-          }
-
-          function inittexture() {
-              if (videoval.videoWidth != 0 && videoval.videoHeight != 0) {
-                  console.log("init texture");
-                  console.log(videoval.videoWidth);
-                  console.log(videoval.videoHeight);
-                  console.log(videoval.src);
-                  canvas.width = 1280;
-                  canvas.height = 640;
-                  console.log(canvas.width);
-                  console.log(canvas.height);
-                  base64String = canvas.toDataURL().split('base64,')[1];
-
-                  gameInstance.SendMessage(name, 'GetWidth', canvas.width);
-                  gameInstance.SendMessage(name, 'GetHeight', canvas.height);
-                  gameInstance.SendMessage(name, 'SetTex', base64String);
-                  drawcanvas();
-                  //aaaa();
-              } else {
-                  console.log("not init");
-                  requestAnimationFrame(inittexture);
-              }
-          }
-          var blobob;
-          var s = false;
-          function finSet() {
-              s = false;
-          }
-          function aaaa() {
-              try {
-                  if (s == false) {
-                      SendBlob();
-                      s = true;
-                  }
-                  //SendBase64String();
-              } catch (e) { }
-              //requestAnimationFrame(aaaa);
-          }
-          function callback(blob) {
-              URL.revokeObjectURL(url);
-              url = URL.createObjectURL(blob);
-
-              gameInstance.SendMessage(name, 'set', url);
-          }
-
-          function SendBlob() {
-              //blobob = canvas.toBlob(callback, "image/jpeg", 1.0);
-              url = URL.createObjectURL(videoval.src);
-              console.log(url);
-              gameInstance.SendMessage(name, 'set', url);
-          }
-
-          function SendBase64String() {
-              base64String = canvas.toDataURL("image/jpeg").split('base64,')[1];
-              gameInstance.SendMessage(name, 'SetTextureFunction', base64String);
-          }
+          
 
           function drawcanvas() {
               if (HMD == null) {
+                  console.log("getHMD");
                   getVRDevices();
               }
               HMD.getFrameData(frameData);
