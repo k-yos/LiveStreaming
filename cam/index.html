@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en-us">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | WebCam</title>
@@ -8,7 +8,7 @@
     <script>
       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/cam.json");
     </script>
-      <script>
+    <script>
           var vrHMD, vrSensor;
           var vrPoseData;
           var frameData;
@@ -126,7 +126,7 @@
               window.setTimeout("drawcanvas()", 10000);
           }
 
-          
+
 
           function drawcanvas() {
               if (vrHMD == null) {
@@ -147,11 +147,11 @@
               }
               requestAnimationFrame(drawcanvas);
           }
-      </script>
+    </script>
 
 
-  </head>
-  <body>
+</head>
+<body>
     <div id="gameContainer" style="width: 960px; height: 600px; margin: auto"></div>
-  </body>
+</body>
 </html>
