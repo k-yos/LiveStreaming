@@ -22,8 +22,6 @@
                               console.log("get HMD device");
                               vrHMD = devices[i];
                               console.log(vrHMD.displayName);
-                              var button = document.getElementById('button');
-                              button.disabled = false;
                               break;
                           }
                       }
@@ -123,7 +121,7 @@
 
 
           window.onload = function () {
-              console.log("init");
+              console.log("init2");
               window.setTimeout("drawcanvas()", 10000);
           }
 
@@ -133,6 +131,8 @@
               if (vrHMD == null) {
                   console.log("getHMD");
                   getVRDevices();
+                  requestAnimationFrame(drawcanvas);
+                  return;
               }
               vrHMD.getFrameData(frameData);
               var curFramePose = frameData.pose;
