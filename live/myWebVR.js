@@ -38,7 +38,7 @@ function webvr_click() {
     {
         console.log("Display Normal");
         vrHMD.exitPresent();
-        //gameInstance.SendMessage('CameraSet', 'ChangeMode', 'normal');
+        gameInstance.SendMessage('CameraSet', 'ChangeMode', 'normal');
         mode = 0;
     }
     //getVRSensorState();
