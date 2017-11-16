@@ -137,8 +137,8 @@
               }
               vrHMD.getFrameData(frameData);
               var curFramePose = frameData.pose;
-
               var orientation = curFramePose.orientation;
+              console.log(orientation);
               if (orientation != null) {
                   gameInstance.SendMessage('Main Camera', 'RotationX', -orientation[0]);
                   gameInstance.SendMessage('Main Camera', 'RotationY', -orientation[1]);
