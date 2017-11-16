@@ -130,19 +130,19 @@
           
 
           function drawcanvas() {
-              if (HMD == null) {
+              if (vrHMD == null) {
                   console.log("getHMD");
                   getVRDevices();
               }
-              HMD.getFrameData(frameData);
+              vrHMD.getFrameData(frameData);
               var curFramePose = frameData.pose;
 
               var orientation = curFramePose.orientation;
               if (orientation != null) {
-                  gameInstance.SendMessage('CameraSet', 'RotationX', -orientation[0]);
-                  gameInstance.SendMessage('CameraSet', 'RotationY', -orientation[1]);
-                  gameInstance.SendMessage('CameraSet', 'RotationZ', orientation[2]);
-                  gameInstance.SendMessage('CameraSet', 'RotationW', orientation[3]);
+                  gameInstance.SendMessage('Main Camera', 'RotationX', -orientation[0]);
+                  gameInstance.SendMessage('Main Camera', 'RotationY', -orientation[1]);
+                  gameInstance.SendMessage('Main Camera', 'RotationZ', orientation[2]);
+                  gameInstance.SendMessage('Main Camera', 'RotationW', orientation[3]);
               }
               requestAnimationFrame(drawcanvas);
           }
